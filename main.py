@@ -8,10 +8,12 @@ def zero_matrix(size): # Function to initialize a zero matrix (results of the mu
     return [[0.0 for _ in range(size)] for _ in range(size)]
 
 
-def matrix_multiplication_loop_unrolling(size, unroll_factor=8): # Function to perform matrix multiplication with loop unrolling
+def matrix_multiplication_loop_unrolling(size): # Function to perform matrix multiplication with loop unrolling
     A = generate_matrix(size) # Generate first matrix
     B = generate_matrix(size) # Generate second matrix
     C = zero_matrix(size)
+
+    unroll_factor = 8
     
     start_time = time.time()
     
